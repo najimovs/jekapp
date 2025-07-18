@@ -1,6 +1,7 @@
 import { getAuthUser } from '../../../lib/auth';
 import { redirect } from 'next/navigation';
 import CreateUserForm from './CreateUserForm';
+import LogoutButton from '../components/LogoutButton';
 
 export default async function CreateUserPage() {
   const user = await getAuthUser();
@@ -31,14 +32,7 @@ export default async function CreateUserPage() {
               >
                 Dashboard
               </a>
-              <form action="/api/auth/logout" method="POST" className="inline">
-                <button
-                  type="submit"
-                  className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
-                >
-                  Chiqish
-                </button>
-              </form>
+              <LogoutButton className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors" />
             </div>
           </div>
         </div>
