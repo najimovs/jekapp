@@ -28,12 +28,6 @@ export default async function DashboardPage() {
               >
                 Honadonlar
               </a>
-              <a
-                href="/create-user"
-                className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
-              >
-                Yangi foydalanuvchi
-              </a>
               <form action="/api/auth/logout" method="POST" className="inline">
                 <button
                   type="submit"
