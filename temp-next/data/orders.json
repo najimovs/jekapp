@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "user_id": "21_169",
+    "order_type": "elektrik",
+    "description": "Rozeta ishlamayapti",
+    "order_date": "2024-01-15T10:30:00Z",
+    "status": "open"
+  },
+  {
+    "id": "2",
+    "user_id": "21_169",
+    "order_type": "santexnik",
+    "description": "Suv quvuri oqayapti",
+    "order_date": "2024-01-10T14:20:00Z",
+    "status": "closed"
+  },
+  {
+    "id": "1752828471927",
+    "user_id": "42_100",
+    "order_type": "usta",
+    "description": "Usta kere karochi",
+    "order_date": "2025-07-18T08:47:51.927Z",
+    "status": "cancelled"
+  },
+  {
+    "id": "1752828697450",
+    "user_id": "42_100",
+    "order_type": "santexnik",
+    "description": "suv toshdi",
+    "order_date": "2025-07-18T08:51:37.450Z",
+    "status": "closed"
+  },
+  {
+    "id": "1752828772759",
+    "user_id": "42_100",
+    "order_type": "vahokzo",
+    "description": "dddddd",
+    "order_date": "2025-07-18T08:52:52.759Z",
+    "status": "open"
+  },
+  {
+    "id": "1752829089844",
+    "user_id": "42_102",
+    "order_type": "usta",
+    "description": "xm hm",
+    "order_date": "2025-07-18T08:58:09.844Z",
+    "status": "open"
+  }
+]

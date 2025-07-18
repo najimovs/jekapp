@@ -1,0 +1,42 @@
+[
+  {
+    "id": "admin",
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin",
+    "apartment": null,
+    "room": null
+  },
+  {
+    "id": "21_169",
+    "username": "21_169",
+    "password": "password123",
+    "role": "user",
+    "apartment": 21,
+    "room": 169
+  },
+  {
+    "id": "42_100",
+    "username": "42_100",
+    "password": "demo123",
+    "role": "user",
+    "apartment": 42,
+    "room": 100
+  },
+  {
+    "id": "42_101",
+    "username": "42_101",
+    "password": "demo123",
+    "role": "user",
+    "apartment": 42,
+    "room": 101
+  },
+  {
+    "id": "42_102",
+    "username": "42_102",
+    "password": "demo12",
+    "role": "user",
+    "apartment": 42,
+    "room": 102
+  }
+]
