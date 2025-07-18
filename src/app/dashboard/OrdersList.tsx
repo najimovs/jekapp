@@ -11,6 +11,31 @@ export default function OrdersList({ orders: initialOrders }: OrdersListProps) {
   const [orders, setOrders] = useState(initialOrders);
   const [loading, setLoading] = useState<string | null>(null);
 
+  const exportToCSV = () => {
+    const headers = ['ID', 'Foydalanuvchi', 'Turi', 'Izoh', 'Sana', 'Holati'];
+    const csvData = [
+      headers.join(','),
+      ...orders.map(order => [
+        order.id,
+        order.user_id,
+        getOrderTypeText(order.order_type),
+        `"${order.description.replace(/"/g, '""')}"`, // Escape quotes
+        new Date(order.order_date).toLocaleDateString('uz-UZ'),
+        getStatusText(order.status)
+      ].join(','))
+    ].join('\n');
+
+    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', `buyurtmalar_${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const handleCancelOrder = async (orderId: string) => {
     if (!confirm('Bu buyurtmani bekor qilishni xohlaysizmi?')) {
       return;
@@ -92,7 +117,19 @@ export default function OrdersList({ orders: initialOrders }: OrdersListProps) {
   }
 
   return (
-    <div className="overflow-x-auto">
+    <div>
+      <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+        <div className="text-sm text-gray-600">
+          Jami {orders.length} ta buyurtma
+        </div>
+        <button
+          onClick={exportToCSV}
+          className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors text-sm"
+        >
+          CSV Export
+        </button>
+      </div>
+      <div className="overflow-x-auto">
       <table className="min-w-full divide-y divide-gray-200">
         <thead className="bg-gray-50">
           <tr>
@@ -157,6 +194,7 @@ export default function OrdersList({ orders: initialOrders }: OrdersListProps) {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
